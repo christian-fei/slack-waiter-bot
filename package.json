@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/christian-fei/slack-waiter-bot#readme",
   "dependencies": {
+    "aws-sdk": "^2.6.1",
     "bluebird": "^3.4.6",
     "claudia": "^1.8.0",
     "claudia-bot-builder": "^1.4.4"
