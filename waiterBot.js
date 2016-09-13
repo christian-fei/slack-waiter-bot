@@ -9,6 +9,7 @@ const waiterBotCommandHandler = require('./lib/waiterBotCommandHandler')
 const slackResponseFormatter = require('./lib/slackResponseFormatter')
 
 const api = botBuilder((request, apiRequest) => {
+  console.log('-- starting to handle', request, apiRequest)
   const response = waiterBotCommandHandler(request.originalRequest)
   return response.then(slackResponseFormatter)
 
