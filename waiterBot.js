@@ -5,12 +5,12 @@ const slackDelayedReply = botBuilder.slackDelayedReply
 const aws = require('aws-sdk')
 const lambda = new aws.Lambda()
 
-const waiterBotCommandHandler = require('./lib/waiterBotCommandHandler')
+const CommandHandler = require('./lib/commands/CommandHandler')
 const slackResponseFormatter = require('./lib/slackResponseFormatter')
 
 const api = botBuilder((request, apiRequest) => {
   console.log('-- starting to handle', request, apiRequest)
-  const response = waiterBotCommandHandler(request.originalRequest)
+  const response = CommandHandler.handle(request.originalRequest)
   return response.then(slackResponseFormatter)
 
   return delayReply(request, apiRequest)
