@@ -5,7 +5,7 @@ const slackResponseFormatter = require('./lib/slackResponseFormatter')
 
 const log = (payload) => {console.log('-- responding', payload); return payload}
 const api = botBuilder((request, apiRequest) => {
-  console.log('-- starting to handle', request, apiRequest)
+  console.log('-- starting to handle', request)
   const response = CommandHandler.handle(request.originalRequest)
   return response.then(log).then(slackResponseFormatter)
 })
