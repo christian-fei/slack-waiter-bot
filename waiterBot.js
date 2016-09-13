@@ -1,20 +1,34 @@
 'use strict'
 const botBuilder = require('claudia-bot-builder')
-const slackDelayedReply = botBuilder.slackDelayedReply
-
-const aws = require('aws-sdk')
-const lambda = new aws.Lambda()
-
 const CommandHandler = require('./lib/commands/CommandHandler')
 const slackResponseFormatter = require('./lib/slackResponseFormatter')
 
+const log = (payload) => {console.log('-- responding', payload); return payload}
 const api = botBuilder((request, apiRequest) => {
   console.log('-- starting to handle', request, apiRequest)
   const response = CommandHandler.handle(request.originalRequest)
-  return response.then(slackResponseFormatter)
+  return response.then(log).then(slackResponseFormatter)
 })
 
 module.exports = api
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const slackDelayedReply = botBuilder.slackDelayedReply
+// const aws = require('aws-sdk')
+// const lambda = new aws.Lambda()
 
   // return delayReply(request, apiRequest)
   // .then(() => {
