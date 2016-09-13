@@ -1,0 +1,28 @@
+{
+  "name": "slack-waiter-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha lib/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christian-fei/slack-waiter-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christian-fei/slack-waiter-bot/issues"
+  },
+  "homepage": "https://github.com/christian-fei/slack-waiter-bot#readme",
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "claudia": "^1.8.0",
+    "claudia-bot-builder": "^1.4.4"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.6.1",
+    "chai-as-promised": "^5.3.0"
+  }
+}

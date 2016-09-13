@@ -1,0 +1,11 @@
+{
+  "lambda": {
+    "role": "slack-waiter-bot-executor",
+    "name": "slack-waiter-bot",
+    "region": "eu-central-1"
+  },
+  "api": {
+    "id": "k62g8azai1",
+    "module": "waiterBot"
+  }
+}

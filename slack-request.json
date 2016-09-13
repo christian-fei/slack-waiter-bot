@@ -1,0 +1,17 @@
+{
+  "sender": "REDACTED",
+  "text": "Hello again!",
+  "type": "slack-slash-command",
+  "originalRequest": {
+    "token": "REDACTED",
+    "team_id": "REDACTED",
+    "team_domain": "slack-waiter-bot",
+    "channel_id": "REDACTED",
+    "channel_name": "general",
+    "user_id": "REDACTED",
+    "user_name": "crifei93",
+    "command": "/waiter",
+    "text": "Hello again!",
+    "response_url": "REDACTED"
+  }
+}

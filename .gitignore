@@ -1,0 +1,5 @@
+node_modules
+aws.config.json
+lib/aws.config.json
+aws.config.js
+lib/aws.config.js
