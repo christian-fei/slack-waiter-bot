@@ -1,11 +1,32 @@
 'use strict'
 const botBuilder = require('claudia-bot-builder')
+const slackDelayedReply = botBuilder.slackDelayedReply
 
 const waiterBotCommandHandler = require('./lib/waiterBotCommandHandler')
 const slackResponseFormatter = require('./lib/slackResponseFormatter')
 
-module.exports = botBuilder((request) => {
-  const response = waiterBotCommandHandler(request.originalRequest)
-  console.log('-- responding with', response)
-  return response.then(slackResponseFormatter)
+const api = botBuilder((request) => {
+  const result = waiterBotCommandHandler(request.originalRequest)
+  console.log('-- responding with', result)
+  return result.then((response) => {
+    return slackDelayedReply(request, slackResponseFormatter(response))
+  })
 })
+
+api.intercept((event) => {
+  if (!event.slackEvent) // if this is a normal web request, let it run
+    return event
+
+  console.log('-- event', event)
+  return false
+  // const message = event.slackEvent
+  // const seconds = parseInt(message.text, 10)
+
+  // return slackDelayedReply(message, {
+  //   text: `${seconds} seconds passed.`,
+  //   response_type: 'in_channel'
+  // })
+  // .then(() => false) // prevent normal execution
+})
+
+module.exports = api
