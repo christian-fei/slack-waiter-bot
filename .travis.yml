@@ -1,2 +1,2 @@
 sudo: required
-language: nodejs
+language: node
