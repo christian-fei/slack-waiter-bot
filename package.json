@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha lib/*.test.js lib/**/*.test.js"
+    "test": "mocha --require test.helper.js lib/*.test.js lib/**/*.test.js"
   },
   "repository": {
     "type": "git",
