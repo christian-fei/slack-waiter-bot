@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require test.helper.js lib/*.test.js lib/**/*.test.js"
+    "test:unit": "find ./lib -name *.test.js | xargs mocha --require test.helper.js",
+    "test:uat": "find ./lib -name *.acceptance-test.js | xargs mocha --require test.helper.js",
+    "test": "npm run test:unit && npm run test:uat"
   },
   "repository": {
     "type": "git",
