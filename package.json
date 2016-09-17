@@ -21,7 +21,8 @@
   "dependencies": {
     "bluebird": "^3.4.6",
     "claudia": "^1.8.0",
-    "claudia-bot-builder": "^1.4.4"
+    "claudia-bot-builder": "^1.4.4",
+    "lodash.merge": "^4.6.0"
   },
   "devDependencies": {
     "aws-sdk": "^2.6.1",
