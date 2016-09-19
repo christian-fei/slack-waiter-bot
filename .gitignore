@@ -3,3 +3,4 @@ aws.config.json
 lib/aws.config.json
 aws.config.js
 lib/aws.config.js
+npm-debug.log
